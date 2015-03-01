@@ -15,6 +15,10 @@ angular.module('guppypay', [
       controller: 'HomeCtrl',
       templateUrl: 'assets/guppypay/views/home.html'
     })
+    .state('groups', {
+      url: '/groups',
+      templateUrl: 'assets/guppypay/views/groups.html'
+    })
     $urlRouterProvider.otherwise('/');
   }
 ]);
