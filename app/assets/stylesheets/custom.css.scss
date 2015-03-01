@@ -97,13 +97,14 @@ button {
 .friends-section {
   border-top: 1px solid black;
   position: absolute;
-  top: 320px;
+  top: 340px;
   left: 0;
   right: 0;
   margin: auto;
   width: 800px;
   height: 320px;
   background-color: #FFFFFF;
+  overflow: scroll;
 
   .friends-in-group-section {
     top: 0;
