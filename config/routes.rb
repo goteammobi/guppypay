@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  match 'oauth', to: 'oauth_callbacks_controller#oauth', via: 'GET'
+  devise_for :users
+  
+  match 'oauth', to: 'oauth_callbacks#oauth', via: 'GET'
+  match 'venmo_auth', to: 'services#venmo_auth', via: 'GET'
 
   root 'home#index'
 

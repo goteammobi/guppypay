@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem "typhoeus"
 gem 'bower-rails'
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
