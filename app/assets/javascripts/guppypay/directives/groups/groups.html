@@ -1,18 +1,27 @@
+<div ng-show="showModal" class="modal">
+  <div class="cancel-friends" ng-click="showModal = false"><i class="fa fa-times fa-2x"></i></div>
+  <span ng-repeat="friend in friendsInGroup track by $index">
+    <img ng-src="{{friend.profile_picture_url}}" /></span>
+  <form class="charge-form" ng-submit="chargeGroup(note, amount)">
+    <input type="text" placeholder="$99.99" ng-model="amount" />
+    <input type="textfield" placeholder="Type a note here ..." ng-model="note" style="width: 100%; height: 100px; font-size: 64px;" />
+    <button>Charge them NOW</button>
+  </form>
+</div>
 <div class="groups-container overlay-white">
   <div ng-hide="showFriends" class="groups-section">
     <h1>Groups</h1>
-    <button ng-click="test()">Toggle Friends</button>
     <ul>
       <li ng-repeat="group in groups track by $index">
         <div class="group-display-block">
-          <div class="group-display-name">{{group.name}}</div>
+          <div ng-click="showFriendsFunc(group)" class="group-display-name">{{group.name}}</div>
         </div>
       </li>
     </ul>
   </div>
   <div ng-show="showFriends" class="friends-in-group-section">
-    <div class="cancel-friends" ng-click="hideFriends()"><i class="fa fa-times fa-2x"></i></div>
-    <h1>Friends in Group</h1>
+      <button style="margin-top: 8px; position: absolute; top: 0; right: 0;" ng-click="showModal = true">Charge</button>
+    <h1>Friends in {{currentGroup.name}}</h1>
     <ul>
       <li ng-repeat="friend in friendsInGroup track by $index">
         <div class="venmo-display-block">
