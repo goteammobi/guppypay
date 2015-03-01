@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="guppypay">
 <head>
   <title>Guppypay</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<%= yield %>
+<%#= yield %>
+
+<ui-view></ui-view>
 
 </body>
 </html>
