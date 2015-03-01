@@ -1,4 +1,17 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-image: url("guppypay_bg.jpg");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
 button {
+  display: block;
   width: 200px;
   height: 50px;
   font-size: 18px;
@@ -9,10 +22,27 @@ button {
   border-bottom-left-radius: 50px 50px;
   background-color: rgba(61, 149, 206, 0.75);
   color: #FFFFFF;
+  margin: 0 auto;
 
   &:hover {
     background-color: rgba(61, 149, 206, 1);
   }
 
   transition: all 0.1s ease-in-out;
+}
+
+.login-box {
+  width: 480px;
+  height: 320px;
+  margin: 0 auto;
+  margin-top: 100px;
+
+  h1 {
+    font-size: 48px;
+    padding-top: 80px;
+  }
+}
+
+.overlay-white {
+  background-color: rgba(255, 255, 255, 0.6);
 }
