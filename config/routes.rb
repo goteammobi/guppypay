@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match 'oauth', to: 'oauth_callbacks_controller#oauth', via: 'GET'
+
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
