@@ -3,6 +3,12 @@ module Api
     class UsersController < ApplicationController
       respond_to :json
 
+      def index
+        render json: {
+          users: User.all
+        }
+      end
+
       def groups_in_user
         user = User.find_by_id(params[:user_id])
 

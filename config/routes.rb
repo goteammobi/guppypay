@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       match 'venmo/charge', to: 'venmo#charge', via: 'GET'
       match 'venmo/charge_group', to: 'venmo#charge_group', via: 'GET'
 
+      match '/users', to: 'user#index', via: 'GET'
       match '/users/groups', to: 'users#groups_in_user', via: 'GET'
       match '/users/remove_group', to: 'users#remove_group', via: 'GET'
       match '/users/add_group', to: 'users#add_group', via: 'GET'
