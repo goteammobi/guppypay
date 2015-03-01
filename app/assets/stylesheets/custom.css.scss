@@ -105,10 +105,17 @@ button {
   height: 320px;
   background-color: #FFFFFF;
   overflow: scroll;
+}
 
-  .friends-in-group-section {
-    top: 0;
-  }
+.friends-in-group-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 800px;
+  height: 320px;
+  overflow: scroll;
 }
 
 .groups-section {
