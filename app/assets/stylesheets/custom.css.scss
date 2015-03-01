@@ -61,6 +61,20 @@ button {
   }
 }
 
+.group-display-block {
+  margin: 8px;
+  text-align: center;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    font-size: 26px;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  transition: all 0.1s ease-in-out;
+}
+
 .venmo-display-block {
   width: 200px;
   height: 100px;
