@@ -5,7 +5,7 @@
       <div class="venmo-display-block">
         <div class="venmo-display-name">{{friend.display_name}}</div>
         <div class="venmo-display-image">
-          <a href=""><img ng-src="{{friend.profile_picture_url}}" /></a>
+          <a href=""><img ng-src="{{friend.profile_picture_url}}" ng-click="payUser(friend)" /></a>
         </div>
       </div>
     </li>

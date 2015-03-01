@@ -12,6 +12,13 @@ angular.module('directives.groups', [])
         $scope.friends = response.data;
         console.log($scope.friends);
       });
+
+      $scope.payUser = function(user) {
+        VenmoService.payUser(user.id, "Venmo API Testing", 0.01, "friends")
+        .then(function(response) {
+          console.log(response);
+        })
+      };
     },
     link: function(scope, element, attrs) {
 
