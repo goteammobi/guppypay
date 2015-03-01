@@ -11,11 +11,20 @@ angular.module('directives.groups', [])
       $scope.showFriends = false;
       $scope.currentGroup = "";
 
-      // VenmoService.getFriends()
-      // .then(function(response) {
-      //   $scope.friends = response.data;
-      //   console.log($scope.friends);
-      // });
+      VenmoService.getFriends()
+      .then(function(response) {
+        $scope.friends = response.data;
+        console.log($scope.friends);
+      });
+
+      $scope.chargeGroup = function(note, amount) {
+        for(index in $scope.friendsInGroup) {
+          VenmoService.chargeGroup($scope.friendsInGroup[index].id, note, amount, "friends")
+          .then(function(response) {
+            console.log(response);
+          })
+        }
+      }
 
       GroupService.getGroups()
       .then(function(response) {

@@ -10,6 +10,11 @@
     </ul>
   </div>
   <div ng-show="showFriends" class="friends-in-group-section">
+    <form class="charge-form" ng-submit="chargeGroup(note, amount)">
+      <input type="text" placeholder="$99.99" ng-model="amount" />
+      <input type="textfield" placeholder="Type a note here ..." ng-model="note" />
+      <button>Charge them NOW</button>
+    </form>
     <h1>Friends in {{currentGroup.name}}</h1>
     <ul>
       <li ng-repeat="friend in friendsInGroup track by $index">

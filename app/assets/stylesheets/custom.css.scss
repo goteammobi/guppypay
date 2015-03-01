@@ -163,3 +163,27 @@ button {
   width: 100%;
   height: 100%;
 }
+
+.charge-form {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+
+  input {
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 32px;
+    display: block;
+    left: 0;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    border-top-right-radius: 50px 50px;
+    border-top-left-radius: 50px 50px;
+    border-bottom-right-radius: 50px 50px;
+    border-bottom-left-radius: 50px 50px;
+  }
+}
