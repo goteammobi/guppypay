@@ -1,4 +1,4 @@
 GuppyPay
 ========
 
-### GuppyPay Server
+GuppyPay Server
