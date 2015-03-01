@@ -10,6 +10,7 @@ angular.module('directives.groups', [])
       $scope.friendsInGroup = [];
       $scope.showFriends = false;
       $scope.currentGroup = "";
+      $scope.showModal = false;
 
       VenmoService.getFriends()
       .then(function(response) {
@@ -19,11 +20,12 @@ angular.module('directives.groups', [])
 
       $scope.chargeGroup = function(note, amount) {
         for(index in $scope.friendsInGroup) {
-          VenmoService.chargeGroup($scope.friendsInGroup[index].id, note, amount, "friends")
+          VenmoService.chargeGroup($scope.friendsInGroup[index].id, note, amount, "friends", $scope.friendsInGroup.length)
           .then(function(response) {
             console.log(response);
           })
         }
+        $scope.showModal = false;
       }
 
       GroupService.getGroups()
@@ -47,6 +49,7 @@ angular.module('directives.groups', [])
       $scope.showFriendsFunc = function(group) {
         $scope.showFriends = true;
         $scope.currentGroup = group;
+        $scope.friendsInGroup = [];
       }
 
       $scope.hideFriends = function() {

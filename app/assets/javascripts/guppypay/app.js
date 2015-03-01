@@ -5,6 +5,7 @@ angular.module('guppypay', [
   'ngCookies',
   'controllers.homeCtrl',
   'directives.groups',
+  // 'directives.modal',
   'services.venmoService',
   'services.groupService'
 ])

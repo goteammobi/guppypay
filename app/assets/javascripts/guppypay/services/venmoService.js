@@ -41,8 +41,10 @@ angular.module('services.venmoService', [])
       
       return deferred.promise;
     },
-    chargeGroup: function(paymate_id, note, amount, audience) {
+    chargeGroup: function(paymate_id, note, amount, audience, count) {
       var deferred = $q.defer();
+
+      amount = amount / count;
 
       var url = "/api/v1/venmo/charge.json?" +
                     "paymate_id=" + paymate_id +
