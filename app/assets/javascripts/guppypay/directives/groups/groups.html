@@ -2,7 +2,12 @@
   <h1>Groups</h1>
   <ul>
     <li ng-repeat="friend in friends track by $index">
-      <div class="venmo-display-name">{{friend.display_name}}</div>
+      <div class="venmo-display-block">
+        <div class="venmo-display-name">{{friend.display_name}}</div>
+        <div class="venmo-display-image">
+          <a href=""><img ng-src="{{friend.profile_picture_url}}" /></a>
+        </div>
+      </div>
     </li>
   </ul>
 </div>

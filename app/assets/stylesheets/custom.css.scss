@@ -11,6 +11,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 button {
   display: block;
   width: 200px;
@@ -55,8 +60,37 @@ button {
   }
 }
 
+.venmo-display-block {
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+}
+
 .venmo-display-name {
   margin: 8px;
+  text-align: center;
+}
+
+.venmo-display-image {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px 50px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    transition: all 0.1s ease-in-out;
+  }
 }
 
 .overlay-white {
