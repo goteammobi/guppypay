@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   match 'oauth', to: 'oauth_callbacks#oauth', via: 'GET'
   match 'venmo_auth', to: 'services#venmo_auth', via: 'GET'
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      match 'venmo/friends', to: 'venmo#friends', via: 'GET'
+    end
+  end
+
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
