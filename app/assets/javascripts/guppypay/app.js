@@ -3,7 +3,9 @@ angular.module('guppypay', [
   'ngRoute',
   'ngResource',
   'ngCookies',
-  'controllers.homeCtrl'
+  'controllers.homeCtrl',
+  'directives.groups',
+  'services.venmoService'
 ])
 .config([
   '$stateProvider',
