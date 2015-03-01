@@ -23,10 +23,11 @@ class OauthCallbacksController < ApplicationController
         email: response["user"]["email"],
         password: "asdfasdf",
         password_confirmation: "asdfasdf",
+        venmo_id: response["user"]["id"],
         auth_token: response["access_token"]
       })
     end
 
-    redirect_to root_path
+    redirect_to root_path + "#/groups"
   end
 end

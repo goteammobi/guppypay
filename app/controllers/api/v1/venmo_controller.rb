@@ -3,8 +3,12 @@ module Api
     class VenmoController < ApplicationController
       respond_to :json
 
+      # my_id = "1483040010272768557"
+      # sandbox_id = "145434160922624933"
+      # sandbox_token = "DtepCPxqBBrZRbbQa2ATwfye4aPLxGu3"
+
       def friends
-        url = "https://api.venmo.com/v1/users/" + "145434160922624933" + "/friends?access_token=" + "DtepCPxqBBrZRbbQa2ATwfye4aPLxGu3" + "&limit=50"
+        url = "https://api.venmo.com/v1/users/" + current_user.venmo_id + "/friends?access_token=" + current_user.auth_token + "&limit=50"
 
         request = Typhoeus.get(url)
         response = JSON.parse(request.response_body)

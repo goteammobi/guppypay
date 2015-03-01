@@ -1,5 +1,5 @@
 angular.module('directives.groups', [])
-.directive('groups', ['VenmoService', function(VenmoService) {
+.directive('groups', ['VenmoService', 'GroupService', function(VenmoService, GroupService) {
   return {
     restrict: 'AE',
     scope: {},
@@ -9,12 +9,18 @@ angular.module('directives.groups', [])
       $scope.groups = []
       $scope.friendsInGroup = [];
       $scope.showFriends = false;
+      $scope.currentGroup = "";
 
-      VenmoService.getFriends()
+      // VenmoService.getFriends()
+      // .then(function(response) {
+      //   $scope.friends = response.data;
+      //   console.log($scope.friends);
+      // });
+
+      GroupService.getGroups()
       .then(function(response) {
-        $scope.friends = response.data;
-        console.log($scope.friends);
-      });
+        $scope.groups = response.groups
+      })
 
       $scope.payUser = function(user) {
         VenmoService.payUser(user.id, "Venmo API Testing", 0.01, "friends")
@@ -29,8 +35,9 @@ angular.module('directives.groups', [])
         $scope.friends.splice(index, 1);
       }
 
-      $scope.test = function() {
-        $scope.showFriends = !$scope.showFriends;
+      $scope.showFriendsFunc = function(group) {
+        $scope.showFriends = true;
+        $scope.currentGroup = group;
       }
 
       $scope.hideFriends = function() {
