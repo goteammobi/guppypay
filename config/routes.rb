@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       match 'venmo/friends', to: 'venmo#friends', via: 'GET'
+      match 'venmo/pay', to: 'venmo#pay', via: 'GET'
+      match 'venmo/charge', to: 'venmo#charge', via: 'GET'
+      match 'venmo/charge_group', to: 'venmo#charge_group', via: 'GET'
     end
   end
 
