@@ -4,7 +4,7 @@ module Api
       respond_to :json
 
       def friends
-        url = "https://api.venmo.com/v1/users/" + "1483040010272768557" + "/friends?access_token=" + current_user.auth_token + "&limit=50"
+        url = "https://api.venmo.com/v1/users/" + "145434160922624933" + "/friends?access_token=" + "DtepCPxqBBrZRbbQa2ATwfye4aPLxGu3" + "&limit=50"
 
         request = Typhoeus.get(url)
         response = JSON.parse(request.response_body)

@@ -11,6 +11,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 button {
   display: block;
   width: 200px;
@@ -24,6 +29,7 @@ button {
   background-color: rgba(61, 149, 206, 0.75);
   color: #FFFFFF;
   margin: 0 auto;
+  outline: none;
 
   &:hover {
     background-color: rgba(61, 149, 206, 1);
@@ -42,6 +48,84 @@ button {
     font-size: 48px;
     padding-top: 80px;
   }
+}
+
+.groups-container {
+  width: 800px;
+  height: 640px;
+  margin: 0 auto;
+  overflow: none;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.venmo-display-block {
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+}
+
+.venmo-display-name {
+  margin: 8px;
+  text-align: center;
+}
+
+.venmo-display-image {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px 50px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+.friends-section {
+  border-top: 1px solid black;
+  position: absolute;
+  top: 320px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 800px;
+  height: 320px;
+  background-color: #FFFFFF;
+
+  .friends-in-group-section {
+    top: 0;
+  }
+}
+
+.groups-section {
+  overflow: scroll;
+}
+
+.cancel-friends {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-times {
+  transition: all 0.1s ease-in-out;
+}
+
+.fa-times:hover {
+  transform: scale(1.2);
 }
 
 .overlay-white {

@@ -1,0 +1,41 @@
+<div class="groups-container overlay-white">
+  <div ng-hide="showFriends" class="groups-section">
+    <h1>Groups</h1>
+    <button ng-click="test()">Toggle Friends</button>
+    <ul>
+      <li ng-repeat="group in groups track by $index">
+        <div class="group-display-block">
+          <div class="group-display-name">{{group.name}}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div ng-show="showFriends" class="friends-in-group-section">
+    <div class="cancel-friends" ng-click="hideFriends()"><i class="fa fa-times fa-2x"></i></div>
+    <h1>Friends in Group</h1>
+    <ul>
+      <li ng-repeat="friend in friendsInGroup track by $index">
+        <div class="venmo-display-block">
+          <div class="venmo-display-name">{{friend.display_name}}</div>
+          <div class="venmo-display-image">
+            <a href=""><img ng-src="{{friend.profile_picture_url}}" /></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>  
+  <div ng-show="showFriends" class="friends-section">
+    <div class="cancel-friends" ng-click="hideFriends()"><i class="fa fa-times fa-2x"></i></div>
+    <h1>Add Friends</h1>
+    <ul>
+      <li ng-repeat="friend in friends track by $index">
+        <div class="venmo-display-block">
+          <div class="venmo-display-name">{{friend.display_name}}</div>
+          <div class="venmo-display-image">
+            <img ng-src="{{friend.profile_picture_url}}" ng-click="addFriendToGroup(friend)" />
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
