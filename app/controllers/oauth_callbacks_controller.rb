@@ -16,10 +16,9 @@ class OauthCallbacksController < ApplicationController
     if @user
       puts "hereeeee"
       @user.update_auth_token(response["access_token"])
-      sign_in(@user)
     else
       puts "thereeee"
-      User.create({
+      @user = User.create({
         email: response["user"]["email"],
         password: "asdfasdf",
         password_confirmation: "asdfasdf",
@@ -27,7 +26,7 @@ class OauthCallbacksController < ApplicationController
         auth_token: response["access_token"]
       })
     end
-
+    sign_in(@user)
     redirect_to root_path + "#/groups"
   end
 end
